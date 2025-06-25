@@ -1,2 +1,0 @@
-# sinitandjon.github.io
-portfolio
