@@ -14,3 +14,29 @@ export default function Navbar() {
     </nav>
   );
 }
+import React, { useState, useEffect } from 'react';
+
+export default function DarkModeToggle() {
+  const [dark, setDark] = useState(() =>
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
+
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [dark]);
+
+  return (
+    <button
+      onClick={() => setDark(!dark)}
+      className="p-2 rounded bg-gray-200 dark:bg-gray-700"
+      aria-label="Toggle Dark Mode"
+    >
+      {dark ? '🌙' : '☀️'}
+    </button>
+  );
+}
+

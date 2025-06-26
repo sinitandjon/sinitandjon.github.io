@@ -6,7 +6,7 @@ import About from './pages/About'
 import Experience from './pages/Experience'
 import Projects from './pages/Projects'
 import Publications from './pages/Publications'
-import './index.css';
+import './index.pcss';
 
 function App() {
   return (
