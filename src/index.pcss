@@ -6,8 +6,18 @@ body {
   @apply font-inter bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
 }
 
-
-
+* ::after, ::before {
+    box-sizing: border-box;
+}
+body {
+    display: flex
+;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f8fb;
+    color: #0a2342;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -32,13 +42,7 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+
 
 h1 {
   font-size: 3.2em;

@@ -1,11 +1,11 @@
 // App.jsx
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
-import Home from './pages/Home'
-import About from './pages/About'
-import Experience from './pages/Experience'
-import Projects from './pages/Projects'
-import Publications from './pages/Publications'
+import Home from '../pages/Home'
+import About from '../pages/About'
+import Experience from '../pages/Experience'
+import Projects from './Projects'
+import Publications from '../pages/Publications'
 import './index.pcss';
 
 function App() {
