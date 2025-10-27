@@ -1,25 +1,33 @@
-// You can add your custom JavaScript here if needed.
-// For example, dynamic content loading, animations, etc.
+// script.js
+// Chargement dynamique des réflexions
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("reflexions-list");
 
-  // Liste des fichiers à charger (tu ajoutes ici tes fichiers à mesure)
+  if (!container) {
+    console.warn("Aucun conteneur #reflexions-list trouvé sur cette page.");
+    return;
+  }
+
+  // Liste des fichiers à charger
   const files = [
     "reflexions/2025-10-27-premiere-reflexion.html",
-    "reflexions/2025-11-05-idee-sur-lai.html"
   ];
 
   files.forEach(file => {
     fetch(file)
-      .then(response => response.text())
+      .then(response => {
+        if (!response.ok) throw new Error(`Fichier introuvable: ${file}`);
+        return response.text();
+      })
       .then(content => {
         const article = document.createElement("div");
         article.classList.add("reflexion-block", "mb-5");
         article.innerHTML = content;
         container.appendChild(article);
       })
-      .catch(err => console.error("Erreur de chargement :", file, err));
-    });
+      .catch(err => {
+        console.error("Erreur de chargement :", err);
+      });
+  });
 });
-
